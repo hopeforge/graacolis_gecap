@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="card mt-3">
+        <div class="card-body shadow">
+            <h5 class="card-title text-uppercase">Lista de publicação automatizada de desafios</h5>
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Titulo</th>
+                        <th scope="col">Data de início</th>
+                        <th scope="col">Data de fim</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Doação de Cabelo</td>
+                        <td>11/01/2020</td>
+                        <td>15/02/2020</td>
+                        <td><button type="button" class="btn btn-secondary"
+                                [routerLink]="['/desafio-programado/detalhe']">Detalhes</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Campanha Primavera do Bem</td>
+                        <td>25/01/2020</td>
+                        <td>13/02/2020</td>
+                        <td><button type="button" class="btn btn-secondary"
+                                [routerLink]="['/desafio-programado/detalhe']">Detalhes</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

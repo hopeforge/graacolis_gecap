@@ -1,0 +1,41 @@
+
+<header>
+  <nav class="navbar navbar-expand-md navbar-light sticky-top nav-menu">
+    <div class="container">
+      <a class="navbar-brand" [routerLink]="['/']">graacolis_gecap</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
+        aria-label="Toggle navigation" [attr.aria-expanded]="isExpanded" (click)="toggle()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse" [ngClass]="{ show: isExpanded }">
+        <ul *ngIf="isLogged" class="navbar-nav flex-grow">
+          <li class="nav-item" [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }">
+            <a class="nav-link text-dark" [routerLink]="['/']">Início</a>
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{exact:true}">
+            <a class="nav-link text-dark" [routerLink]="['/desafio']" >Desafio</a>
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link text-dark" [routerLink]="['/desafio-programado']">Desafios Programados</a>
+          <li class="nav-item" [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{exact:true}">
+            <a class="nav-link text-dark" [routerLink]="['/desafio/detalhe']">Detalhe - Desafio</a>
+          </li>
+
+          <li class="nav-item dropdown" dropdown>
+            <a [routerLink]="null"
+               dropdownToggle
+               class="nav-link dropdown-toggle" 
+               (click)="isCollapsed=!isCollapsed">Cadastro<i class="fa fa-caret-down"></i></a>
+            <ul *dropdownMenu class="dropdown-menu" role="menu">
+              <li role="menuitem"><a class="dropdown-item" [routerLink]="['/cadastro/desafio']">Desafio</a></li>
+              <li role="menuitem"><a class="dropdown-item"[routerLink]="['/cadastro/empresa']">Empresa</a></li>
+            </ul>
+          </li>
+                    <li  class="nav-item">
+            <a class="nav-link text-dark" (click)='logout()' [routerLink]="null">Sair</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

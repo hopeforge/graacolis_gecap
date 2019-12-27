@@ -1,0 +1,61 @@
+<div class="row">
+    <div class="col-md-8 mx-auto">
+        <div class="card mt-4">
+            <h4 class="card-header">Novo Desafio</h4>
+            <div class="card-body">
+                <form [formGroup]="desafioForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label for="NomeDesafio">Titulo</label>
+
+                        <input type="text" class="form-control" id="NomeDesafio" formControlName="NomeDesafio"
+                            aria-describedby="tituloHelp" placeholder="Desafio Graacolis de arrecadacao">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="descricao">Descrição</label>
+                        <textarea class="form-control" id="descricao" formControlName="Descricao"
+                            placeholder="Desafio Graacolis de arrecadacao"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Etapas">Etapas</label>
+                        <textarea class="form-control" id="Etapas" formControlName="Etapas"
+                            placeholder="Desafio Graacolis de arrecadacao"></textarea>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="DataInicio">Inicio</label>
+                        <input type="text" class="form-control" id="DataInicio" aria-describedby="emailHelp"
+                            placeholder="11/01/2019" formControlName="DataInicio">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="DataFinal">Fim</label>
+                        <input type="text" class="form-control" id="DataFinal" aria-describedby="DataFinalHelp"
+                            placeholder="11/01/2019" formControlName="DataFinal">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Tipo</label>
+                        <input type="text" class="form-control" id="Tipo" aria-describedby="TipoHelp"
+                            placeholder="Arrecadação de brinquedos" formControlName="Tipo">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Quantidade Premiados</label>
+                        <input type="number" class="form-control" id="QuantidadePremiados"
+                            aria-describedby="QuantidadePremiadosHelp" placeholder="4"
+                            formControlName="QuantidadePremiados">
+                    </div>
+
+
+                    <button [disabled]="loading" class="btn btn-primary">
+                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                        Salvar
+                    </button>
+                    <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+                </form>
+            </div>
+        </div>
+    </div>
